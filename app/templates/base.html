@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Ferbzyy Blog {% endblock %}</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #eeeeee;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #cc0000;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    nav ul li a:hover {
+      background-color: #aa0000;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+   
+  </style>
+
+  {% block styles %}{% endblock %}
+</head>
+<body>
+
+  <header>
+    <h1>Ferbzyy Blog </h1>
+    <p>Faça publicacoes sobre animes ou filmes :P </p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="{% url 'index' %}">Inicio</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+
+</body>
+</html>
