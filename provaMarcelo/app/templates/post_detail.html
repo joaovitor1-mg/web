@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.titulo }}{% endblock %}
+
+{% block styles %}
+<style>
+  .post-container {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .post-categoria {
+    color: #cc0000;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .post-titulo {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+
+  .post-meta {
+    color: #666666;
+    font-size: 13px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333333;
+  }
+
+  .post-imagem {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 20px;
+  }
+
+  .post-conteudo {
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .btn-voltar {
+    display: inline-block;
+    margin-top: 30px;
+    color: #cc0000;
+    text-decoration: none;
+    border: 1px solid #cc0000;
+    padding: 8px 20px;
+    border-radius: 4px;
+  }
+
+  .btn-voltar:hover {
+    background-color: #cc0000;
+    color: #fff;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="post-container">
+  <p class="post-categoria">{{ object.categoria.nome_categoria }}</p>
+  <h1 class="post-titulo">{{ object.titulo }}</h1>
+
+  <div class="post-meta">
+    {{ object.autor }} - {{ object.data_publicacao|date:"d/m/Y" }}
+  </div>
+
+  {% if object.imagem %}
+    <img src="{{ object.imagem.url }}" alt="{{ object.titulo }}" class="post-imagem">
+  {% endif %}
+
+  <div class="post-conteudo">{{ object.conteudo }}</div>
+
+  <a href="{% url 'index' %}" class="btn-voltar">Voltar</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+# Ambiente virtual
+blog_env/
+venv/
+env/
+
+# Banco de dados
+db.sqlite3
+
+# Imagens enviadas pelos usuarios
+media/
+
+# Arquivos compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Arquivos de migracao (opcional, alguns preferem versionar)
+# */migrations/
+
+# Variaveis de ambiente
+.env
+
+# Configuracoes do editor
+.vscode/
+.idea/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
