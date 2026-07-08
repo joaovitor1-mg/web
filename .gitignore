@@ -1,9 +1,0 @@
-__pycache__/
-*.py[cod]
-*env/
-[cars_env]/
-db.sqlite3
-media/
-.vscode/
-.idea/
-node_modules/
